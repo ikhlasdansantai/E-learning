@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["index.html"],
+  content: ["index.html", "./public/**/*.{html,css,js}"],
   theme: {
     extend: {
       container: {
@@ -26,10 +26,11 @@ module.exports = {
           "50%": { transform: "rotate(6deg)" },
         },
       },
-      // fontFamily: {
-      //   Jost: ["Jost", "sans-serif"],
-      //   Monallesia: ["Monallesia", "sans-serif"],
-      // },
+      fontFamily: {
+        Jost: ["Jost", "sans-serif"],
+        Monallesia: ["Monallesia", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],
