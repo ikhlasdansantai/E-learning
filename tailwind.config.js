@@ -19,6 +19,13 @@ module.exports = {
       padding: {
         standart: "1rem 1.5rem",
       },
+      animation: {},
+      keyframes: {
+        goyang: {
+          "0%, 100%": { transform: "rotate(-6deg)" },
+          "50%": { transform: "rotate(6deg)" },
+        },
+      },
       // fontFamily: {
       //   Jost: ["Jost", "sans-serif"],
       //   Monallesia: ["Monallesia", "sans-serif"],
