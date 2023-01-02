@@ -11,7 +11,7 @@
     <div class="container-all">
       <header class="container max-w-full mx-auto bg-primary min-h-[100vh] min-[1700px]:min-h-[40rem] flex flex-col">
         <nav class="container bg-[#263238] max-w-full fixed bottom-0 md:relative sm:p-standart z-50">
-          <section class="container nav-wrappers max-w-full sm:max-w-[90rem] p-standart md:p-0 lg:p-standart md:mx-auto flex justify-between items-center bg-[#263238]">
+          <section class="container nav-wrappers max-w-full sm:max-w-[90rem] p-standart md:p-0 lg:p-standart md:mx-auto flex justify-between items-center">
             <h5 class="logo text-2xl font-bold text-slate-100 tracking-wider">E-Learning Dud</h5>
 
             <div class="nav-desktop rela hidden ml-auto md:flex justify-end items-center justify-self-end">
@@ -24,41 +24,39 @@
               </ul>
             </div>
 
-            <section class="nav-mobile relative">
+            <section class="nav-mobile relative z-[100]">
               <section class="fries-menu w-[25px] h-[20px] flex flex-col justify-between items-center md:hidden relative overflow-hidden z-50">
                 <input type="checkbox" id="checkbox" class="peer opacity-0 absolute top-0 bottom-0 left-0 right-0" />
                 <span class="block bg-white w-full h-[2px] origin-top-left"></span>
                 <span class="block bg-white w-[70%] self-end h-[2px]"></span>
                 <span class="block bg-white w-full h-[2px] origin-bottom-left"></span>
               </section>
-
-              <div
-                class="nav-mobile-content container transition duration-300 grid grid-cols-3 mx-auto fixed gap-10 pb-[5rem] pt-[3rem] h-[60vh] left-0 right-0 bottom-0 -z-10 rounded-[1.2rem] border-4 border-slate-600 overflow-hidden bg-white"
-              >
-                <span class="nav-menu flex flex-col justify-center items-center gap-2">
-                  <img src="public/assets/img/home.png" alt="" class="block w-[3.5rem]" />
-                  <p>Home</p>
-                </span>
-                <span class="nav-menu flex flex-col justify-center items-center gap-2">
-                  <img src="public/assets/img/woman.png" alt="" class="block w-[3.5rem]" />
-                  <p>About</p>
-                </span>
-                <span class="nav-menu flex flex-col justify-center items-center gap-2">
-                  <img src="public/assets/img/makeup-bw.png" alt="" class="block w-[3.5rem]" />
-                  <p>Kategori</p>
-                </span>
-                <span class="nav-menu flex flex-col justify-center items-center gap-2">
-                  <img src="public/assets/img/thumbs-up.png" alt="" class="block w-[3.5rem]" />
-                  <p>Reviews</p>
-                </span>
-                <span class="nav-menu flex flex-col justify-center items-center gap-2">
-                  <img src="public/assets/img/contact-us.png" alt="" class="block w-[3.5rem]" />
-                  <p>Contact</p>
-                </span>
-              </div>
             </section>
           </section>
         </nav>
+
+        <div class="nav-mobile-content transition duration-300 grid grid-cols-3 mx-auto fixed gap-10 pb-[5rem] pt-[3rem] h-[60vh] left-0 right-0 bottom-10 rounded-[1.2rem] border-4 border-slate-600 overflow-hidden bg-white sm:hidden">
+          <a href="#" class="nav-menu flex flex-col justify-center items-center gap-2">
+            <img src="public/assets/img/home.png" alt="" class="block w-[3.5rem]" />
+            <p>Home</p>
+          </a>
+          <span class="nav-menu flex flex-col justify-center items-center gap-2">
+            <img src="public/assets/img/woman.png" alt="" class="block w-[3.5rem]" />
+            <p>About</p>
+          </span>
+          <span class="nav-menu flex flex-col justify-center items-center gap-2">
+            <img src="public/assets/img/makeup-bw.png" alt="" class="block w-[3.5rem]" />
+            <p>Kategori</p>
+          </span>
+          <span class="nav-menu flex flex-col justify-center items-center gap-2">
+            <img src="public/assets/img/thumbs-up.png" alt="" class="block w-[3.5rem]" />
+            <p>Reviews</p>
+          </span>
+          <span class="nav-menu flex flex-col justify-center items-center gap-2">
+            <img src="public/assets/img/contact-us.png" alt="" class="block w-[3.5rem]" />
+            <p>Contact</p>
+          </span>
+        </div>
 
         <!-- ======================= 
             *header-contents-wrapper
