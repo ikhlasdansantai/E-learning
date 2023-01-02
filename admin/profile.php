@@ -71,7 +71,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="my-article.php">
-            My Articles
+               My Articles
             </a>
           </li>
         </ul>
@@ -82,81 +82,26 @@
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <h2>Welcome, Nama User!</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Title</th>
-              <th scope="col">Category</th>
-              <th scope="col">Tags</th>
-              <th scope="col">Author</th>
-              <th scope="col">Last Edited</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Apa itu Cybersecurity?</td>
-              <td>Cybersecurity</td>
-              <td>
-                <span class="badge text-bg-dark m">cybersecurity</span>
-            </td>
-              <td>Asis</td>
-              <td>02 January 2023</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>React 101</td>
-              <td>Programming</td>
-              <td>
-                <span class="badge text-bg-dark m">frontend</span>
-                <span class="badge text-bg-dark m">react</span>
-                <span class="badge text-bg-dark m">javascript</span>
-              </td>
-              <td>Ikhlas</td>
-              <td>01 January 2023</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Apa itu API?</td>
-              <td>Programming</td>
-              <td>
-                <span class="badge text-bg-dark m">backend</span>
-                <span class="badge text-bg-dark m">api</span>
-                <span class="badge text-bg-dark m">nodejs</span>
-              </td>
-              <td>Ikhlas</td>
-              <td>12 December 2022</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Robotics 101</td>
-              <td>IOT</td>
-              <td>
-                <span class="badge text-bg-dark m">robotic</span>
-                <span class="badge text-bg-dark m">arduino</span>
-                <span class="badge text-bg-dark m">programming</span>
-              </td>
-              <td>Roy</td>
-              <td>24 May 2022</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Apa itu XSS?</td>
-              <td>Cybersecurity</td>
-              <td>
-                <span class="badge text-bg-dark m">pentest</span>
-                <span class="badge text-bg-dark m">offensive</span>
-                <span class="badge text-bg-dark m">bugbounty</span>
-              </td>
-              <td>Asis</td>
-              <td>12 February 2022</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <center>
+      <h2>Profile</h2>
+      <div class="card" style="width: 500px;">
+  <div class="card-body">
+    <h5 class="card-title">Hi, Nama User!</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Edit Profile</h6>
+    <p class="card-text">
+    <form>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="username" value="Username User" disabled>
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" id="password" placeholder="Create New Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </p>
+  </div>
+</div>
+    </center>
     </main>
   </div>
 </div>
