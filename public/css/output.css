@@ -1240,9 +1240,24 @@ body {
   transform: rotate(-45deg);
 }
 
+.hover\:bg-blue-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
 .hover\:text-slate-300:hover {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
+.active\:bg-blue-900:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+
+.active\:bg-blue-800:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }
 
 .active\:ring:active {
@@ -1254,6 +1269,26 @@ body {
 .active\:ring-secondary:active {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(235 153 110 / var(--tw-ring-opacity));
+}
+
+.active\:ring-black:active {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(41 41 48 / var(--tw-ring-opacity));
+}
+
+.active\:ring-blue-500:active {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.active\:ring-slate-200:active {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));
+}
+
+.active\:ring-blue-900:active {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(30 58 138 / var(--tw-ring-opacity));
 }
 
 @media (max-width: 350px) {
