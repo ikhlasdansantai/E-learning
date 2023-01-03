@@ -42,12 +42,6 @@
       font-size: 12px;
       letter-spacing: 0.5px;
     }
-    /* .html {
-      color: red;
-    }
-    .css {
-      color: rgb(103, 103, 160);
-    } */
     td {
       text-align: center;
       padding: 2rem;
@@ -61,9 +55,6 @@
 
       padding-left: 1rem;
     }
-    /* td:nth-child(3) {
-      padding-inline: 1.5rem;
-    } */
 
     @media (min-width: 1136px) {
       td:nth-child(2) {
