@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["index.html", "./public/**/*.{html,css,js}"],
+  content: ["index.html", "./**/*.{html,css,js,php}"],
   theme: {
     extend: {
       container: {
@@ -30,6 +30,13 @@ module.exports = {
         Jost: ["Jost", "sans-serif"],
         Monallesia: ["Monallesia", "sans-serif"],
         Montserrat: ["Montserrat", "sans-serif"],
+      },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        16: "repeat(16, minmax(0, 1fr))",
+        sidebar: "15rem, 100%",
+        // Complex site-specific column configuration
+        footer: "200px minmax(900px, 1fr) 100px",
       },
     },
   },
