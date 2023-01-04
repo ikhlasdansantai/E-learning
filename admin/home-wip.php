@@ -5,79 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="assets/style/style.css" />
     <link rel="stylesheet" href="../public/css/output.css" />
   </head>
-
-  <style>
-    .tabs {
-      display: flex;
-    }
-
-    .tab {
-      padding: 10px;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 20px;
-    }
-
-    .tab.active {
-      background-color: #fff;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    td span {
-      display: block;
-      border-radius: 0.5rem;
-      margin-block: 0.5rem;
-      padding-block: 0.225rem;
-      padding-inline: 0.5rem;
-      background-color: #1a1a1a;
-      color: #f5f5f5;
-      font-weight: bold;
-      font-size: 12px;
-      letter-spacing: 0.5px;
-    }
-    td {
-      text-align: center;
-      padding: 2rem;
-    }
-    tr:nth-child(even) {
-      background-color: #d4d4d4;
-    }
-    td:nth-child(2) {
-      text-align: left;
-      font-weight: 500;
-
-      padding-left: 1rem;
-    }
-
-    @media (min-width: 1136px) {
-      td:nth-child(2) {
-        max-width: 15ch;
-      }
-      .tags{
-        display:flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: .7rem;
-        flex-wrap: wrap;
-      }
-      td span{
-        width: 25%;
-        font-size: 13px;
-        /* padding-inline: .5rem; */
-      }
-      .js{
-        text-align: center;
-        padding-inline: 2rem;
-      }
-    }
-  </style>
 
   <body class="bg-primary">
     <!-- min-[1700px]:grid-cols-3 -->
@@ -97,7 +27,7 @@
       </header>
 
       <main class="w-full col-start-2 col-end-5 grid-rows-1 mt-[8rem]">
-        <section id="Home" class="tab-content active w-[100%] sm:w-[80%]">
+        <section id="Home" class="tab-content w-[100%] sm:w-[80%]">
           <h2 class="text-2xl">Selamat datang <span class="text-slate-500 font-bold">Aeri Uchinaga</span></h2>
 
           <table class="w-full overflow-scroll min-[1136px]:overflow-hidden mt-8 table-auto border-collapse">
@@ -117,7 +47,7 @@
                 <td class="text-center border-t border-b border-slate-300 text-sm p-3 lg:text-lg">1</td>
                 <td class="border-t border-b border-slate-300 text-sm lg:text-lg">Cara membuat hover di tailwindcss</td>
                 <td class="border-t border-b border-slate-300 text-sm p-3 lg:text-lg">Programming</td>
-                <td class="border-t  border-slate-300 text-sm p-3 tags">
+                <td class="border-t border-slate-300 text-sm p-3 tags">
                   <span class="html">Html</span>
                   <span class="css">CSS</span>
                 </td>
@@ -140,7 +70,7 @@
                 <td class="text-center border-t border-b border-slate-300 text-sm p-3 lg:text-lg">3</td>
                 <td class="border-t border-b border-slate-300 text-sm lg:text-lg">Cara membuat website</td>
                 <td class="p-3 border-t border-b border-slate-300 text-sm lg:text-lg">Programming</td>
-                <td class="p-3 border-t  border-slate-300 text-sm tags">
+                <td class="p-3 border-t border-slate-300 text-sm tags">
                   <span class="html">Html</span>
                   <span class="css">CSS</span>
                   <span class="js">JS</span>
@@ -153,12 +83,12 @@
                 <td class="p-3 text-center border-t border-b border-slate-300 text-sm lg:text-lg">4</td>
                 <td class="border-t border-b border-slate-300 text-sm lg:text-lg">Kenapa kita harus pake Python untuk semua project??</td>
                 <td class="p-3 border-t border-b border-slate-300 text-sm lg:text-lg">Programming</td>
-                <td class="border-t  border-slate-300 text-sm p-3 tags">
+                <td class="border-t border-slate-300 text-sm p-3 tags">
                   <span class="php">Django</span>
                   <span class="python">Python</span>
                 </td>
                 <td class="border-t border-b border-slate-300 text-sm lg:text-lg">Si ganteng</td>
-                <td class="border-t  border-slate-300 text-sm lg:text-lg">10 Februari 2023</td>
+                <td class="border-t border-slate-300 text-sm lg:text-lg">10 Februari 2023</td>
               </tr>
               <tr>
                 <td class="p-3 text-center border-t border-b border-slate-300 text-sm">5</td>
@@ -187,14 +117,36 @@
         </section>
 
         <!-- ========== 
-            *USER PAGE 
+            *Profile PAGE 
             =========== -->
 
-        <section class="tab-content">
-          <p>Tab Profile</p>
+        <section class="tab-content mx-auto profile lg:ml-9 active lg:w-[20%]">
+          <h2 class="text-2xl font-bold mb-10 text-center">Profile Admin</h2>
+
+          <div class="card w-full sm:w-[20rem] py-5 lg:self-start flex flex-col justify-center items-center shadow-xl border-4">
+            <div class="avatar card-img w-[10rem] h-[5rem]" id="avatar">
+              <img src="https://avatars.dicebear.com/api/adventurer/ikhsan.svg" alt="avatar" class="block" id="avatarnya" />
+            </div>
+
+            <div class="card-titles text-center mt-16">
+              <h2 class="font-semibold">Hi, <span>Admin</span></h2>
+              <h2 class="text-slate-500 font-semibold">Edit Profile</h2>
+
+              <form class="form mt-6 flex flex-col gap-y-5">
+                <div class="boxInput border border-slate-900">
+                  <label for="username">
+                    <input type="text" id="username" class="username py-2 px-4" placeholder="Username User" />
+                  </label>
+                </div>
+                <div class="boxInput border border-slate-900">
+                  <label for="password">
+                    <input type="password" id="password" class="password py-2 px-4" placeholder="Buat Password Baru" />
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
         </section>
-
-
 
         <div class="tab-content">
           <p>Tab Buat Artikel</p>
@@ -205,36 +157,6 @@
       </main>
     </div>
   </body>
-  <script>
-    const tabs = document.querySelectorAll(".tab");
-    const tabContents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        const tabIndex = Array.prototype.indexOf.call(tabs, this);
-        tabs.forEach(function (tab) {
-          tab.classList.remove("active");
-        });
-        tabContents.forEach(function (tabContent) {
-          tabContent.classList.remove("active");
-        });
-        tab.classList.add("active");
-        tabContents[tabIndex].classList.add("active");
-      });
-    });
-
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   // Selenkap semua baris pada tabel
-    //   var rows = document.querySelectorAll("tr");
-    //   // Tambahkan nomor pada setiap baris
-    //   rows.forEach(function (row, index) {
-    //     // Selenkap kolom nomor pada baris
-    //     var numberColumn = row.querySelector("td:first-child");
-    //     // Tambahkan nomor pada kolom nomor
-    //     numberColumn.innerHTML = index + 1;
-    //     // Tambahkan nomor sebagai ID pada baris
-    //     row.id = "row-" + (index + 1);
-    //   });
-    // });
-  </script>
+  <script src="assets/js/app.js"></script>
 </html>

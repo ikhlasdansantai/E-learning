@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@dicebear/avatars": "^4.10.8",
+    "@dicebear/avatars-male-sprites": "^4.10.8"
   }
 }
