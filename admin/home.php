@@ -10,13 +10,14 @@
   </head>
 
   <body class="bg-primary">
-    <!-- min-[1700px]:grid-cols-3 -->
     <div class="container-all w-full sm:p-0 sm:grid sm:grid-cols-sidebar min-[1136px]:overflow-hidden">
       <div class="top-bar max-w-full bg-black fixed top-0 left-0 right-0 py-[2rem] p-standart">
-        <nav class="container w-[90rem] self-start text-left text-white text-xl">Panel Admin Ikuzo Temera</nav>
+        <nav class="container w-[90rem] self-start text-left text-white text-xl flex justify-between items-center">
+        <h2>Panel Admin Ikuzo Temera</h2>  
+        <button href="" class='border py-2 px-4 border-slate-100'>LOG OUT GAN</button>  
+      </nav>
       </div>
 
-      <!-- min-[1700px]:col-start-1 -->
       <header class="col-start-1 w-[15rem] min-h-[100vh] shadow-xl mt-12 hidden sm:block fixed top-0 left-0 bottom-0">
         <ul class="side-bar tabs my-6 px-8 flex flex-col justify-evenly items-center h-[33rem]">
           <li class="tab"><a href="#">Home</a></li>
@@ -120,10 +121,10 @@
             *Profile PAGE 
             =========== -->
 
-        <section class="tab-content mx-auto profile lg:ml-9 active lg:w-[20%]">
+        <section class="tab-content mx-auto profile active lg">
           <h2 class="text-2xl font-bold mb-10 text-center">Profile Admin</h2>
 
-          <div class="card w-full sm:w-[20rem] py-5 lg:self-start flex flex-col justify-center items-center shadow-xl border-4">
+          <div class="card py-5 mx-auto lg:self-start flex flex-col justify-center items-center shadow-xl border-4 w-[50%]">
             <div class="avatar card-img w-[10rem] h-[5rem]" id="avatar">
               <img src="https://avatars.dicebear.com/api/adventurer/ikhsan.svg" alt="avatar" class="block" id="avatarnya" />
             </div>
