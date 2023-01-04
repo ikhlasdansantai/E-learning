@@ -1,3 +1,10 @@
+<?php
+include 'admin/config/db.php';
+// include 'config/config.php';
+$conn = connect();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -138,71 +145,37 @@
           <h2 class="text-[#263238] font-bold text-3xl">Artikel Terbaru</h2>
 
           <div class="article-cards w-[100%] text-left grid gap-10 mt-6 lg:mt-12 lg:grid-cols-2 gap-y-10">
+
+          <?php
+            $sql = "SELECT id, title, content, category, author, created_on FROM articles ORDER BY created_on DESC";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while($row = $result->fetch_assoc()) { 
+                $phpdate = strtotime( $row['created_on'] );
+                $mysqldate = date( 'd F Y', $phpdate );
+                ?>
             <div class="container cursor-pointer w-[100%] article-card flex flex-col sm:flex-row-reverse justify-between items-center mx-auto border py-[2.2rem] px-[1.5rem] gap-4 shadow-md rounded-md min-[942px]:gap-[3rem] overflow-hidden">
               <div class="article-img w-[100%] sm:w-[50%] border h-full object-contain flex">
                 <img src="https://source.unsplash.com/800x600?code" alt="article-img" class="block mx-auto" />
               </div>
               <div class="article-titles w-full sm:mt-0 sm:w-[50%] h-full flex flex-col">
-                <p class="date font-normal text-slate-500">Jan 02, 2022</p>
-                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove">Cara hack instagram menggunakan React</h2>
-                <p class="text-base text-slate-400 mt-4 sm:mt-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque rerum error animi ratione eveniet facere inventore, natus odio nam rem?</p>
+                <p class="date font-normal text-slate-500"><?= $mysqldate ?></p>
+                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove"><?= $row['title']?></h2>
+                <p class="text-base text-slate-400 mt-4 sm:mt-auto"><?= $row['title']?></p>
               </div>
             </div>
 
-            <div class="container cursor-pointer w-[100%] article-card flex flex-col sm:flex-row-reverse justify-between items-center mx-auto border py-[2.2rem] px-[1.5rem] gap-4 shadow-md rounded-md min-[942px]:gap-[3rem] overflow-hidden">
-              <div class="article-img w-[100%] sm:w-[50%] border h-full object-contain flex">
-                <img src="https://source.unsplash.com/800x600?code" alt="article-img" class="block mx-auto" />
-              </div>
-              <div class="article-titles w-full sm:mt-0 sm:w-[50%] h-full flex flex-col">
-                <p class="date font-normal text-slate-500">Jan 02, 2022</p>
-                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove">Apa itu API? dan bagaimana cara menggunakannya</h2>
-                <p class="text-base text-slate-400 mt-4 sm:mt-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque rerum error animi ratione eveniet facere inventore, natus odio nam rem?</p>
-              </div>
-            </div>
+            <?php }
+            } else {
+              echo "-";
+            }
 
-            <div class="container cursor-pointer w-[100%] article-card flex flex-col sm:flex-row-reverse justify-between items-center mx-auto border py-[2.2rem] px-[1.5rem] gap-4 shadow-md rounded-md min-[942px]:gap-[3rem] overflow-hidden">
-              <div class="article-img w-[100%] sm:w-[50%] border h-full object-contain flex">
-                <img src="https://source.unsplash.com/800x600?code" alt="article-img" class="block mx-auto" />
-              </div>
-              <div class="article-titles w-full sm:mt-0 sm:w-[50%] h-full flex flex-col">
-                <p class="date font-normal text-slate-500">Jan 02, 2022</p>
-                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove">Python = Dewa dalam dunia programming?</h2>
-                <p class="text-base text-slate-400 mt-4 sm:mt-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque rerum error animi ratione eveniet facere inventore, natus odio nam rem?</p>
-              </div>
-            </div>
+            ?>
 
-            <div class="container cursor-pointer w-[100%] article-card flex flex-col sm:flex-row-reverse justify-between items-center mx-auto border py-[2.2rem] px-[1.5rem] gap-4 shadow-md rounded-md min-[942px]:gap-[3rem] overflow-hidden">
-              <div class="article-img w-[100%] sm:w-[50%] border h-full object-contain flex">
-                <img src="https://source.unsplash.com/800x600?code" alt="article-img" class="block mx-auto" />
-              </div>
-              <div class="article-titles w-full sm:mt-0 sm:w-[50%] h-full flex flex-col">
-                <p class="date font-normal text-slate-500">Jan 02, 2022</p>
-                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove w-full">Apa itu API? dan bagaimana cara menggunakannya</h2>
-                <p class="text-base text-slate-400 mt-4 sm:mt-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque rerum error animi ratione eveniet facere inventore, natus odio nam rem?</p>
-              </div>
-            </div>
-
-            <div class="container cursor-pointer w-[100%] article-card flex flex-col sm:flex-row-reverse justify-between items-center mx-auto border py-[2.2rem] px-[1.5rem] gap-4 shadow-md rounded-md min-[942px]:gap-[3rem] overflow-hidden">
-              <div class="article-img w-[100%] sm:w-[50%] border h-full object-contain flex">
-                <img src="https://source.unsplash.com/800x600?code" alt="article-img" class="block mx-auto" />
-              </div>
-              <div class="article-titles w-full sm:mt-0 sm:w-[50%] h-full flex flex-col">
-                <p class="date font-normal text-slate-500">Jan 02, 2022</p>
-                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove w-full">Membuat Gallery Responsif</h2>
-                <p class="text-base text-slate-400 mt-4 sm:mt-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque rerum error animi ratione eveniet facere inventore, natus odio nam rem?</p>
-              </div>
-            </div>
-
-            <div class="container cursor-pointer w-[100%] article-card flex flex-col sm:flex-row-reverse justify-between items-center mx-auto border py-[2.2rem] px-[1.5rem] gap-4 shadow-md rounded-md min-[942px]:gap-[3rem] overflow-hidden">
-              <div class="article-img w-[100%] sm:w-[50%] border h-full object-contain flex">
-                <img src="https://source.unsplash.com/800x600?code" alt="article-img" class="block mx-auto" />
-              </div>
-              <div class="article-titles w-full sm:mt-0 sm:w-[50%] h-full flex flex-col">
-                <p class="date font-normal text-slate-500">Jan 02, 2022</p>
-                <h2 class="article-title font-semibold text-xl xl:text-[26px] ove w-full">Membuat Gallery Responsif</h2>
-                <p class="text-base text-slate-400 mt-4 sm:mt-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque rerum error animi ratione eveniet facere inventore, natus odio nam rem?</p>
-              </div>
-            </div>
           </div>
         </section>
 

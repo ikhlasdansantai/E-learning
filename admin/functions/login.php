@@ -34,6 +34,8 @@ if (mysqli_num_rows($result) > 0) {
         
         // If none of the condition above not met, session will be generated and the user will be redirected to home page
         $_SESSION['username'] = $username;
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['name'] = $row['name'];
         header('Location: ../home.php');
     } else {
         // If user is locked, redirect to login page

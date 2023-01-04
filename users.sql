@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 04, 2023 at 03:53 PM
+-- Generation Time: Jan 04, 2023 at 07:53 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `penyimpanan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles`
+--
+
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `articles` (`id`, `title`, `category`, `content`, `author`, `created_on`) VALUES
+(7, 'Cara meretas IG dapat 500000 followers', 'Cybersecurity', 'Tinggal tanya CEO instagram', 'Aziz', '2021-01-05 01:25:09'),
+(8, 'Cara membuat aplikasi hacking', 'Programming', 'Lorem ipsum dolor sit amet', 'Aziz', '2023-01-05 01:25:44'),
+(9, 'Cara buat satelit', 'IoT', 'Buat aja', 'Aziz', '2023-01-05 01:26:01'),
+(10, 'Hello', 'Hello', 'asfdsfsdf', 'Ikhsan', '2023-01-05 01:32:10');
 
 -- --------------------------------------------------------
 
@@ -50,6 +75,12 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `incorrect_attempts`,
 --
 
 --
+-- Indexes for table `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -58,6 +89,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
