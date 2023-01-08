@@ -31,7 +31,7 @@ if (!isset($_SESSION['username'])) {
         <a href="functions/logout.php" class='border py-2 px-4 border-slate-100'>LOG OUT GAN</a> 
       </nav>
       </div>
-      <!-- min-[1700px]:col-start-1 -->
+  
 
       <header class="col-start-1 w-[15rem] min-h-[100vh] shadow-xl mt-12 hidden sm:block fixed top-0 left-0 bottom-0">
         <ul class="side-bar tabs my-6 px-8 flex flex-col justify-evenly items-center h-[33rem]">

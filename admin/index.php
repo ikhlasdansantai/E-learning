@@ -45,8 +45,8 @@ include 'config/db.php';
 $conn = connect();
 
 // Get value from POST form
-$username = $_POST['username'];
-$userpass = $_POST['password'];
+$username = @$_POST['username'];
+$userpass = @$_POST['password'];
 
 $sql = "SELECT * FROM users WHERE username = ?";
 $stmt = $conn->prepare($sql);
