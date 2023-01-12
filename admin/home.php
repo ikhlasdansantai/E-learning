@@ -16,7 +16,7 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="assets/style/style.css" />
     <link rel="stylesheet" href="../public/css/output.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
@@ -41,6 +41,10 @@ if (!isset($_SESSION['username'])) {
           <li class="tab"><a href="#">Artikel Saya</a></li>
         </ul>
       </header>
+
+      <!-- ============ 
+          *MAIN Section 
+          ============== -->
       <main class="w-full col-start-2 col-end-5 grid-rows-1 mt-[8rem]">
         <section id="Home" class="tab-content w-[100%] sm:w-[80%]">
           <h2 class="text-2xl">Selamat datang <span class="text-slate-500 font-bold"><?= $_SESSION['name'] ?></span></h2>
@@ -89,7 +93,7 @@ if (!isset($_SESSION['username'])) {
             *Profile PAGE
             =========== -->
 
-        <section class="tab-content mx-auto profile active lg">
+        <section id="profile" class="tab-content mx-auto profile  lg">
           <h2 class="text-2xl font-bold mb-10 text-center">Profile Admin</h2>
 
           <div class="card py-5 mx-auto lg:self-start flex flex-col justify-center items-center shadow-xl border-4 w-[50%]">
@@ -114,33 +118,57 @@ if (!isset($_SESSION['username'])) {
             </div>
           </div>
         </section>
-        <div class="tab-content">
+
+        <!-- ============ 
+          *Create Article 
+          ============== -->
+        <section id="create-article" class="tab-content active">
+
         <form action="functions/save-article.php" method="post">
-          Title <input type="text" name="title" id="">
+          <div class="boxInput">
+            <span class="block text-3xl ">Judul Artikel:</span>
+            <label for="title">
+              <input type="text" name="title" id="title" class="px-4 py-2">
+            </label>
+          </div>
           <br>
 
-          Category 
-          <br>
-          <input type="radio" name="category" id="" value="Cybersecurity"> Cybersecurity
-          <br>
-          <input type="radio" name="category" id="" value="Programming"> Programming
-          <br>
-          <input type="radio" name="category" id="" value="IoT"> IoT
-          <br>
+          <h2 class="text-3xl mb-4">Category</h2> 
+          <div class="category-radio-wrapper flex flex-col gap-2">
+            <div class="boxInput">
+              <input type="radio" class="my-2" name="category" id="cybersecurity" value="Cybersecurity"> 
+            <label for="cybersecurity" class="cursor-pointer">Cybersecurity</label>
+          </div>
+          <div class="boxInput">
+            <input type="radio" class="my-2" name="category" id="programming" value="Programming"> 
+          <label for="programming" class="cursor-pointer">Programming</label>
+          </div>
+          <div class="boxInput">
+            <input type="radio" class="my-2" name="category" id="Iot" value="IoT"> 
+            <label for="Iot" class="cursor-pointer">IoT</label>
+          </div>
+          </div>
+          
 
           <input type="hidden" value="<?= $_SESSION['name']; ?>">
 
           <textarea name="content" id="file-input" cols="30" rows="10"></textarea>
           <button type="submit" name="save">Save</button>
         </form>
+        
         <script>
           var simplemde = new SimpleMDE({ element: document.getElementById("file-input") });
         </script>
-        </div>
-        <div class="tab-content">
-        <table class="w-full overflow-scroll min-[1136px]:overflow-hidden mt-8 table-auto border-collapse">
+        </section>
+
+        <!--  ==============
+              Create Article
+              ============== -->
+        <section class="tab-content w-full sm:w-[80%]">
+
+          <table class="w-full overflow-scroll min-[1136px]:overflow-hidden mt-8 table-auto border-collapse">
             <!-- Baris tabel -->
-            <thead class="">
+            <thead>
               <td class="px-2 text-center">ID</td>
               <td class="p-6">Judul</td>
               <td class="text-center p-3">Kategori</td>
@@ -148,7 +176,7 @@ if (!isset($_SESSION['username'])) {
               <td class="text-center p-3">Dibuat</td>
             </thead>
             <tbody>
-            <?php
+              <?php
             $name = $_SESSION['name'];
             $sql = "SELECT id, title, category, author, created_on FROM articles WHERE author = '$name'";
             $stmt = $conn->prepare($sql);
@@ -178,7 +206,7 @@ if (!isset($_SESSION['username'])) {
 
             ?>
           </table>
-        </div>
+        </section>
       </main>
     </div>
   </body>

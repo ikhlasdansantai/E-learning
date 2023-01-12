@@ -1,0 +1,61 @@
+<td class="text-center border-t border-b border-slate-300 text-sm p-3 lg:text-lg"><?= $row['id']; ?></td>
+<td class="border-t border-b border-slate-300 text-sm lg:text-lg"><?= $row['title']; ?></td>
+<td class="border-t border-b border-slate-300 text-sm p-3 lg:text-lg"><?= $row['category']; ?></td>
+<td class="border-t border-b border-slate-300 text-sm p-3 lg:text-lg"><?= $row['author']; ?></td>
+<td class="border-t border-b border-slate-300 text-sm p-3 lg:text-lg"><?= $mysqldate;?></td>
+
+<!-- CREATE ARTICLE -->
+<form action="functions/save-article.php" method="post">
+  <div class="boxInput flex flex-col">
+    <span class="text-3xl mb-2">Judul Artikel</span>
+    <label for="judul-artikel">
+      <input type="text" id="judul-artikel" class="py-2 px-2 border border-slate-300" />
+    </label>
+  </div>
+
+  <div class="kategori-wrapper my-12">
+    <h2 class="text-3xl">Kategori</h2>
+    <div class="kategori-radio-wrapper flex flex-col gap-3 mt-4">
+      <div class="boxInput flex items-center gap-2">
+        <label for="Programming" class="cursor-pointer"> <input type="radio" name="Kategori" value="Cybersecurity"id="Programming" class="cursor-pointer mr-2" />Programming </label>
+      </div>
+
+      <div class="boxInput flex items-center gap-2">
+        <label for="Cybersecurity" class="cursor-pointer"> <input type="radio" name="Kategori" value="Programming" id="Cybersecurity" class="cursor-pointer mr-2" />Cybersecurity </label>
+      </div>
+
+      <div class="boxInput flex items-center gap-2">
+        <label for="IoT" class="cursor-pointer"> <input type="radio" name="Kategori" value="IoT" id="IoT" class="cursor-pointer mr-2" />Internet of Things </label>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" value="<?= $_SESSION['name']; ?>" />
+  <textarea name="content" id="file-input" cols="30" rows="10"></textarea>
+  <button type="submit" name="save" class="border py-2 px-8 bg-sky-800 text-white">Save</button>
+</form>
+
+<!-- FORM ORI -->
+<!-- <form action="functions/save-article.php" method="post">
+          <div class="boxInput">
+            <span class="block">Judul Artikel:</span>
+            <label for="title">
+              <input type="text" name="title" id="title">
+            </label>
+          </div>
+          <br>
+
+          Category 
+          <br>
+          <input type="radio" name="category" id="" value="Cybersecurity" class="cursor-pointer"> Cybersecurity
+          <br>
+          <input type="radio" name="category" id="" value="Programming" class="cursor-pointer"> Programming
+          <br>
+          <input type="radio" name="category" id="" value="IoT" class="cursor-pointer"> IoT
+          <br>
+
+          <input type="hidden" value="<?= $_SESSION['name']; ?>">
+
+          <textarea name="content" id="file-input" cols="30" rows="10"></textarea>
+          <button type="submit" name="save" class="border py-2 px-8 bg-sky-800 text-white">Save</button>
+        </form> -->
